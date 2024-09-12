@@ -309,3 +309,8 @@ Note
 --------
 all features check whether all required input field has data if do so it calls the function and if not it shows a message to the user to enter all fields
 
+Streamlit App link
+--------
+https://mak5fbaasm3o3axfgmkoss.streamlit.app/
+
+

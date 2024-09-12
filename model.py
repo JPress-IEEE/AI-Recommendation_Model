@@ -4,12 +4,12 @@ from transformers import AutoTokenizer, AutoModel
 from pymilvus import (Collection,connections)
 from flask import Flask, request, jsonify
 from sklearn.pipeline import Pipeline
-warnings.filterwarnings("ignore")
 import torch.nn.functional as F
 import pandas as pd
 import warnings
 import torch
 
+warnings.filterwarnings("ignore")
 
 #connect to vector database
 ENDPOINT="https://in03-0008120f0b8b227.serverless.gcp-us-west1.cloud.zilliz.com"

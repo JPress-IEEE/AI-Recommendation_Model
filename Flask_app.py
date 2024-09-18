@@ -35,7 +35,7 @@ def search (embeddings,collection):
     data=[embeddings], 
     anns_field="vector",  
     output_fields=["email","description"],
-    limit=3,
+    limit=10,
     param=search_params
 )
     for hits in results:

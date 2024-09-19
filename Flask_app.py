@@ -2,7 +2,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import FunctionTransformer
 from transformers import AutoTokenizer, AutoModel
 from pymilvus import (Collection,connections)
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify  # type: ignore
 from sklearn.pipeline import Pipeline
 import torch.nn.functional as F
 import pandas as pd

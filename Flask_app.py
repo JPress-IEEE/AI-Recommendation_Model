@@ -111,7 +111,7 @@ app = Flask(__name__)
 @app.route('/store', methods=['POST'])
 def get_description():
     text = request.get_json()
-    data = pd.DataFrame(text)
+    data = pd.DataFrame([text])
     
     if "email" not in data.columns or "description" not in data.columns:
         return jsonify({"error": "Input JSON must contain 'email' and 'description' fields"}), 400
@@ -142,7 +142,7 @@ def get_description():
 def get_recommendation():
     try:
         text = request.get_json()
-        data = pd.DataFrame(text)
+        data = pd.DataFrame([text])
         if "description" not in data.columns:
           return jsonify({"error": "Input JSON must contain 'description' field"}), 400
         description = data["description"].values[0] 
@@ -159,8 +159,7 @@ def get_recommendation():
 @app.route('/update', methods=['POST'])
 def update_data():
     text = request.get_json()
-    data = pd.DataFrame(text)
-    
+    data=pd.DataFrame([text])
     if "email" not in data.columns or "description" not in data.columns:
         return jsonify({"error": "Input JSON must contain 'email' and 'description' fields"}), 400
     
@@ -187,7 +186,7 @@ def update_data():
 def delete_data():
     try:
         text = request.get_json()
-        data = pd.DataFrame(text)
+        data = pd.DataFrame([text])
         
         if "email" not in data.columns :
             return jsonify({"error": "Input JSON must contain 'email'  field"}), 400
